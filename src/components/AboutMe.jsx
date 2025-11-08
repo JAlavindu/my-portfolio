@@ -88,6 +88,8 @@ function AboutMe() {
                   "Vite",
                   "JavaScript",
                   "HTML/CSS",
+                  "SpringBoot",
+                  "PostgreSQL",
                   "Node.js",
                 ].map((tech) => (
                   <span
