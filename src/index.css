@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.13 0.028 261.692);
+  --card-foreground: oklch(0.971 0.013 17.38);
+  --popover: oklch(0 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.666 0.179 58.318);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(1 0 0);
+  --secondary-foreground: oklch(0.147 0.004 49.25);
+  --muted: oklch(0.209 0 0);
+  --muted-foreground: oklch(0.6443 0.0065 239.8756);
+  --accent: oklch(0.216 0.006 56.043);
+  --accent-foreground: oklch(0.666 0.179 58.318);
+  --destructive: oklch(0.6725 0.1962 20.646);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.299 0.0056 236.7076);
+  --input: oklch(0.3399 0.0332 243.8095);
+  --ring: oklch(0.7426 0.131 239.1894);
+  --chart-1: oklch(0.7357 0.1314 240.911);
+  --chart-2: oklch(0.7919 0.1794 159.906);
+  --chart-3: oklch(0.8621 0.1354 86.0875);
+  --chart-4: oklch(0.8065 0.2085 151.6551);
+  --chart-5: oklch(0.6488 0.1858 5.2435);
+  --sidebar: oklch(0.2318 0.0097 276.6446);
+  --sidebar-foreground: oklch(0.8853 0 0);
+  --sidebar-primary: oklch(0.424 0.199 265.638);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.2184 0.0393 243.587);
+  --sidebar-accent-foreground: oklch(0.588 0.158 241.966);
+  --sidebar-border: oklch(0.4296 0.0251 237.3682);
+  --sidebar-ring: oklch(0.7426 0.131 239.1894);
+  --font-sans: Armata, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Alkalami, ui-serif, serif;
+  --font-mono: Anonymous Pro, ui-monospace, monospace;
+  --radius: 0.65rem;
+  --shadow-x: 0px;
+  --shadow-y: 2px;
+  --shadow-blur: 0px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0;
+  --shadow-color: #50b6f5;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0),
+    0px 1px 2px -1px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0),
+    0px 1px 2px -1px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-md: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0),
+    0px 2px 4px -1px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0),
+    0px 4px 6px -1px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0),
+    0px 8px 10px -1px hsl(202.9091 89.1892% 63.7255% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.9091 89.1892% 63.7255% / 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 1;
+  }
+}
+
+@keyframes float-medium {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-30px) translateX(-15px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-fast {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-25px) translateX(15px);
+    opacity: 1;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite;
+}
+
+/* Bat Signal Animations */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Stars layers */
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 200px 300px #fff, 600px 150px #fff, 900px 400px #fff,
+    1200px 200px #fff, 300px 500px #fff, 700px 600px #fff, 1400px 100px #fff,
+    500px 700px #fff, 1100px 500px #fff, 100px 200px #fff, 800px 250px #fff,
+    1300px 350px #fff;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 300px 200px #fff, 700px 350px #fff, 1000px 100px #fff,
+    1300px 400px #fff, 400px 600px #fff, 800px 500px #fff, 1500px 250px #fff,
+    600px 650px #fff, 1200px 450px #fff;
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+.stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 250px 400px rgba(255, 200, 100, 0.8),
+    650px 250px rgba(255, 200, 100, 0.8), 950px 500px rgba(255, 200, 100, 0.8),
+    1250px 300px rgba(255, 200, 100, 0.8);
+  animation: twinkle 7s ease-in-out infinite;
+}
+
+/* City Skyline */
+.city-skyline {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.building {
+  position: relative;
+  background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%);
+  border-top: 1px solid rgba(255, 150, 50, 0.1);
+}
+
+.building::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 15px,
+      rgba(255, 150, 50, 0.03) 15px,
+      rgba(255, 150, 50, 0.03) 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 20px,
+      rgba(255, 150, 50, 0.03) 20px,
+      rgba(255, 150, 50, 0.03) 21px
+    );
+}
+
+.building-1 {
+  width: 100px;
+  height: 180px;
+}
+
+.building-2 {
+  width: 80px;
+  height: 140px;
+}
+
+.building-3 {
+  width: 120px;
+  height: 220px;
+}
+
+.building-4 {
+  width: 90px;
+  height: 160px;
+}
+
+.building-5 {
+  width: 110px;
+  height: 200px;
+}
+
+.building-6 {
+  width: 70px;
+  height: 130px;
+}
+
+.building-7 {
+  width: 95px;
+  height: 170px;
+}
+
+.building-8 {
+  width: 85px;
+  height: 150px;
+}
