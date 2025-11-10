@@ -118,6 +118,8 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
   body {
     @apply bg-background text-foreground;
@@ -125,15 +127,16 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   /* Improve touch scrolling on mobile */
   * {
     -webkit-overflow-scrolling: touch;
   }
-}
-
-/* Custom Animations */
+} /* Custom Animations */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);

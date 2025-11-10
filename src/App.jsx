@@ -7,7 +7,7 @@ import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       {/* <MenuBar /> */}
 
       <Hero />
@@ -17,7 +17,7 @@ function App() {
       <ContactMe />
       <BackToTop />
       <Toaster />
-    </>
+    </div>
   );
 }
 

@@ -101,13 +101,13 @@ function ContactMe() {
         {/* Contact Info Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* Email Card */}
-          <div className="relative group">
+          <div className="relative group overflow-hidden">
             {/* Glowing Border Effect - Behind the card */}
-            <div className="absolute -inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="absolute -inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
 
             {/* Floating Particles - Around the border */}
-            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none hidden sm:block">
               <div className="absolute top-0 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-float-slow blur-[0.5px]"></div>
               <div className="absolute top-1/4 right-0 w-2 h-2 bg-accent rounded-full animate-float-medium blur-[0.5px]"></div>
               <div className="absolute bottom-1/4 left-0 w-1.5 h-1.5 bg-primary rounded-full animate-float-fast blur-[0.5px]"></div>
@@ -144,13 +144,13 @@ function ContactMe() {
           </div>
 
           {/* Phone Card */}
-          <div className="relative group">
+          <div className="relative group overflow-hidden">
             {/* Glowing Border Effect - Behind the card */}
-            <div className="absolute -inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="absolute -inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
 
             {/* Floating Particles - Around the border */}
-            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none hidden sm:block">
               <div className="absolute top-0 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-float-slow blur-[0.5px]"></div>
               <div className="absolute top-1/4 right-0 w-2 h-2 bg-accent rounded-full animate-float-medium blur-[0.5px]"></div>
               <div className="absolute bottom-1/4 left-0 w-1.5 h-1.5 bg-primary rounded-full animate-float-fast blur-[0.5px]"></div>
@@ -187,13 +187,13 @@ function ContactMe() {
           </div>
 
           {/* Location Card */}
-          <div className="relative group">
+          <div className="relative group overflow-hidden">
             {/* Glowing Border Effect - Behind the card */}
-            <div className="absolute -inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="absolute -inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-r from-primary/0 via-primary/50 to-primary/0 rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute inset-0 sm:-inset-0.5 bg-linear-to-br from-accent/30 via-primary/30 to-accent/30 rounded-lg blur-sm opacity-0 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
 
             {/* Floating Particles - Around the border */}
-            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <div className="absolute -inset-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none hidden sm:block">
               <div className="absolute top-0 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-float-slow blur-[0.5px]"></div>
               <div className="absolute top-1/4 right-0 w-2 h-2 bg-accent rounded-full animate-float-medium blur-[0.5px]"></div>
               <div className="absolute bottom-1/4 left-0 w-1.5 h-1.5 bg-primary rounded-full animate-float-fast blur-[0.5px]"></div>

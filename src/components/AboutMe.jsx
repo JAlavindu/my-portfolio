@@ -25,14 +25,14 @@ function AboutMe() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Left Column - Image */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
-            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg">
+          <div className="flex justify-center lg:justify-end order-1 lg:order-1 overflow-hidden">
+            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg px-6 sm:px-8 md:px-4">
               {/* Animated Rotating Gradient Rings */}
-              <div className="absolute -inset-4 bg-linear-to-r from-primary via-accent to-primary rounded-lg blur-xl opacity-30 group-hover:opacity-60 animate-pulse transition duration-500"></div>
-              <div className="absolute -inset-2 bg-linear-to-br from-primary/50 via-accent/50 to-primary/50 rounded-lg blur-lg opacity-40 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
+              <div className="absolute -inset-2 sm:-inset-4 bg-linear-to-r from-primary via-accent to-primary rounded-lg blur-xl opacity-30 group-hover:opacity-60 animate-pulse transition duration-500"></div>
+              <div className="absolute -inset-1 sm:-inset-2 bg-linear-to-br from-primary/50 via-accent/50 to-primary/50 rounded-lg blur-lg opacity-40 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
 
               {/* Floating Particles Effect - Hidden on small screens for better performance */}
-              <div className="absolute -inset-6 hidden sm:block">
+              <div className="absolute -inset-4 sm:-inset-6 hidden md:block">
                 <div className="absolute top-0 left-1/4 w-2 h-2 bg-primary rounded-full animate-float-slow opacity-60"></div>
                 <div className="absolute top-1/4 right-0 w-3 h-3 bg-accent rounded-full animate-float-medium opacity-50"></div>
                 <div className="absolute bottom-1/4 left-0 w-2 h-2 bg-primary rounded-full animate-float-fast opacity-70"></div>

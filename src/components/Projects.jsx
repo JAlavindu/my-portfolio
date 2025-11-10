@@ -88,7 +88,7 @@ function Projects() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative px-0 sm:px-4 lg:px-12">
+        <div className="relative px-2 sm:px-4 lg:px-12">
           <Carousel
             opts={{
               align: "start",
@@ -97,11 +97,11 @@ function Projects() {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 sm:-ml-4">
+            <CarouselContent className="-ml-1 sm:-ml-2 md:-ml-4">
               {projects.map((project) => (
                 <CarouselItem
                   key={project.id}
-                  className="pl-2 sm:pl-4 basis-[85%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3"
+                  className="pl-1 sm:pl-2 md:pl-4 basis-[85%] sm:basis-[80%] md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
                     <Card className="h-full flex flex-col overflow-hidden group hover:shadow-2xl transition-all duration-300 active:scale-95 sm:hover:scale-[1.02] border-2 hover:border-primary/50">
