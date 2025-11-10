@@ -6,30 +6,33 @@ import ImageParticleBorder from "./ImageParticleBorder";
 
 function AboutMe() {
   return (
-    <section className="relative min-h-screen bg-background py-12 sm:py-20 px-4 sm:px-6 lg:px-8 -mt-32 sm:-mt-40 pt-32 sm:pt-40">
+    <section
+      id="about"
+      className="relative min-h-screen bg-background py-12 sm:py-20 px-4 sm:px-6 lg:px-8 -mt-32 sm:-mt-40 pt-32 sm:pt-40"
+    >
       {/* Top Gradient Overlay for smooth transition from Hero */}
       <div className="absolute top-0 left-0 right-0 h-32 sm:h-40 bg-linear-to-b from-black/80 to-transparent pointer-events-none"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Left Column - Image */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-1">
-            <div className="relative group">
+            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg">
               {/* Animated Rotating Gradient Rings */}
               <div className="absolute -inset-4 bg-linear-to-r from-primary via-accent to-primary rounded-lg blur-xl opacity-30 group-hover:opacity-60 animate-pulse transition duration-500"></div>
               <div className="absolute -inset-2 bg-linear-to-br from-primary/50 via-accent/50 to-primary/50 rounded-lg blur-lg opacity-40 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
 
-              {/* Floating Particles Effect */}
-              <div className="absolute -inset-6">
+              {/* Floating Particles Effect - Hidden on small screens for better performance */}
+              <div className="absolute -inset-6 hidden sm:block">
                 <div className="absolute top-0 left-1/4 w-2 h-2 bg-primary rounded-full animate-float-slow opacity-60"></div>
                 <div className="absolute top-1/4 right-0 w-3 h-3 bg-accent rounded-full animate-float-medium opacity-50"></div>
                 <div className="absolute bottom-1/4 left-0 w-2 h-2 bg-primary rounded-full animate-float-fast opacity-70"></div>
@@ -52,7 +55,7 @@ function AboutMe() {
                   <img
                     src={myImage}
                     alt="Lavindu Perera"
-                    className="w-full max-w-md h-auto relative z-10 shadow-2xl"
+                    className="w-full h-auto relative z-10 shadow-2xl"
                   />
 
                   {/* Bottom Glow Effect */}
@@ -63,12 +66,12 @@ function AboutMe() {
           </div>
 
           {/* Right Column - Content */}
-          <div className="space-y-6 order-2 lg:order-2">
-            <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-foreground">
+          <div className="space-y-5 sm:space-y-6 order-2 lg:order-2">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground">
                 Hello! I'm <span className="text-primary">Lavindu Perera</span>
               </h3>
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 A passionate Software Engineer with a knack for creating
                 engaging and user-friendly digital experiences. With a
                 background in IT, I specialize in building web apps, automation,
@@ -77,11 +80,11 @@ function AboutMe() {
             </div>
 
             {/* Skills/Technologies */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-foreground">
+            <div className="space-y-3 sm:space-y-4">
+              <h4 className="text-lg sm:text-xl font-semibold text-foreground">
                 Technologies I Work With
               </h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {[
                   "React",
                   "Tailwind CSS",
@@ -97,7 +100,7 @@ function AboutMe() {
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className="px-4 py-2 bg-card text-card-foreground rounded-lg border border-border hover:border-primary transition-colors duration-200 text-sm font-medium"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 bg-card text-card-foreground rounded-lg border border-border hover:border-primary hover:scale-105 transition-all duration-200 text-xs sm:text-sm font-medium cursor-default"
                   >
                     {tech}
                   </span>
@@ -134,9 +137,9 @@ function AboutMe() {
             </div> */}
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Button
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto h-11 sm:h-10 text-base sm:text-sm"
                 size="lg"
                 onClick={() => {
                   const link = document.createElement("a");
@@ -150,11 +153,25 @@ function AboutMe() {
                   });
                 }}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
                 Download CV
               </Button>
               <Button
                 variant="outline"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto h-11 sm:h-10 text-base sm:text-sm"
                 size="lg"
                 onClick={() =>
                   document
@@ -162,6 +179,20 @@ function AboutMe() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
                 Contact Me
               </Button>
             </div>

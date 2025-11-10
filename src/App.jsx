@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import ContactMe from "./components/ContactMe";
-import ParticleAnimation from "./components/ParticleAnimation";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <AboutMe />
       <Projects />
       <ContactMe />
+      <BackToTop />
       <Toaster />
     </>
   );

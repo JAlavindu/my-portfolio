@@ -10,6 +10,10 @@ function ParticleAnimation() {
 
     const container = containerRef.current;
 
+    // Detect mobile device and adjust settings accordingly
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
     // Scene setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -21,15 +25,16 @@ function ParticleAnimation() {
     camera.position.z = 600;
 
     const renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      antialias: !isMobile, // Disable antialiasing on mobile for performance
       alpha: true,
+      powerPreference: "high-performance", // Use high-performance mode
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
     container.appendChild(renderer.domElement);
 
-    // Particle system
-    const particleCount = 18000;
+    // Particle system - Reduce count on mobile devices
+    const particleCount = isMobile ? 5000 : isTablet ? 10000 : 18000;
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
@@ -122,13 +127,27 @@ function ParticleAnimation() {
     const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lines);
 
-    // Mouse interaction
+    // Mouse/Touch interaction
     const handleMouseMove = (event) => {
       mouseRef.current.targetX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseRef.current.targetY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    const handleTouchMove = (event) => {
+      if (event.touches.length > 0) {
+        const touch = event.touches[0];
+        mouseRef.current.targetX = (touch.clientX / window.innerWidth) * 2 - 1;
+        mouseRef.current.targetY =
+          -(touch.clientY / window.innerHeight) * 2 + 1;
+      }
+    };
+
+    // Only add mouse interaction on non-mobile devices for better performance
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove);
+    } else {
+      window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    }
 
     // Animation
     let time = 0;
@@ -233,7 +252,11 @@ function ParticleAnimation() {
     // Cleanup
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      } else {
+        window.removeEventListener("touchmove", handleTouchMove);
+      }
       if (container && renderer.domElement) {
         container.removeChild(renderer.domElement);
       }
