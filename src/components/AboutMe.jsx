@@ -25,42 +25,49 @@ function AboutMe() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Left Column - Image */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-1 overflow-hidden">
-            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg px-6 sm:px-8 md:px-4">
-              {/* Animated Rotating Gradient Rings */}
-              <div className="absolute -inset-2 sm:-inset-4 bg-linear-to-r from-primary via-accent to-primary rounded-lg blur-xl opacity-30 group-hover:opacity-60 animate-pulse transition duration-500"></div>
-              <div className="absolute -inset-1 sm:-inset-2 bg-linear-to-br from-primary/50 via-accent/50 to-primary/50 rounded-lg blur-lg opacity-40 group-hover:opacity-70 animate-spin-slow transition duration-500"></div>
+          <div className="flex justify-center lg:justify-end order-1 lg:order-1">
+            <div className="relative group w-full max-w-sm sm:max-w-md lg:max-w-lg">
+              {/* Outer Glowing Ring - Multi-layered glow effect */}
+              <div className="absolute -inset-1 bg-linear-to-r from-primary via-accent to-primary rounded-2xl blur-2xl opacity-40 group-hover:opacity-70 animate-pulse transition duration-700"></div>
+              <div className="absolute -inset-0.5 bg-linear-to-br from-primary/60 via-accent/60 to-primary/60 rounded-2xl blur-xl opacity-50 group-hover:opacity-80 transition duration-700"></div>
 
-              {/* Floating Particles Effect - Hidden on small screens for better performance */}
-              <div className="absolute -inset-4 sm:-inset-6 hidden md:block">
-                <div className="absolute top-0 left-1/4 w-2 h-2 bg-primary rounded-full animate-float-slow opacity-60"></div>
-                <div className="absolute top-1/4 right-0 w-3 h-3 bg-accent rounded-full animate-float-medium opacity-50"></div>
-                <div className="absolute bottom-1/4 left-0 w-2 h-2 bg-primary rounded-full animate-float-fast opacity-70"></div>
-                <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-accent rounded-full animate-float-slow opacity-60"></div>
-              </div>
+              {/* Rotating Gradient Border */}
+              <div className="absolute -inset-1 bg-linear-to-r from-primary via-accent to-accent rounded-2xl opacity-0 group-hover:opacity-30 animate-spin-slow blur-md transition duration-700"></div>
 
-              {/* Main Image Container */}
-              <div className="relative transform group-hover:scale-105 transition-transform duration-500 ease-out">
-                <div className="relative overflow-hidden rounded-lg">
-                  {/* Inner Glow Border */}
-                  <div className="absolute inset-0 rounded-lg border-4 border-primary/20 group-hover:border-primary/40 transition duration-500"></div>
-
+              {/* Main Image Container with enhanced shadow */}
+              <div className="relative transform group-hover:scale-[1.02] transition-all duration-500 ease-out">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-500">
                   {/* Particle Border Effect */}
                   <ImageParticleBorder />
 
                   {/* Animated Shine Effect */}
-                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></div>
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out z-10"></div>
 
-                  {/* Image */}
+                  {/* Image with better contrast */}
                   <img
                     src={myImage}
                     alt="Lavindu Perera"
-                    className="w-full h-auto relative z-10 shadow-2xl"
+                    className="w-full h-auto relative z-0 block"
                   />
 
-                  {/* Bottom Glow Effect */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                  {/* Ambient Glow Overlay */}
+                  <div className="absolute inset-0 bg-linear-to-t from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"></div>
+
+                  {/* Bottom Accent Glow */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-primary/30 via-accent/10 to-transparent opacity-60 group-hover:opacity-100 transition duration-500"></div>
+
+                  {/* Corner Highlights */}
+                  <div className="absolute top-0 left-0 w-20 h-20 bg-linear-to-br from-primary/20 to-transparent rounded-tl-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 bg-linear-to-tl from-accent/20 to-transparent rounded-br-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 </div>
+              </div>
+
+              {/* Floating Particles Effect - More subtle and positioned better */}
+              <div className="absolute -inset-8 hidden lg:block pointer-events-none">
+                <div className="absolute top-1/4 -left-4 w-3 h-3 bg-primary rounded-full animate-float-slow opacity-60 blur-sm"></div>
+                <div className="absolute top-1/3 -right-4 w-2 h-2 bg-accent rounded-full animate-float-medium opacity-70 blur-sm"></div>
+                <div className="absolute bottom-1/3 -left-4 w-2.5 h-2.5 bg-primary rounded-full animate-float-fast opacity-50 blur-sm"></div>
+                <div className="absolute bottom-1/4 -right-4 w-3 h-3 bg-accent rounded-full animate-float-slow opacity-60 blur-sm"></div>
               </div>
             </div>
           </div>
